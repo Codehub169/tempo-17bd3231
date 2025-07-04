@@ -14,7 +14,7 @@ npm run build
 if [ $? -ne 0 ]; then
   echo "Failed to build the React application. Exiting."
   exit 1
-}
+fi
 
 echo "Serving the application on port 9000..."
 npx serve dist -l 9000
