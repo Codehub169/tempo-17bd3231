@@ -14,7 +14,7 @@ function ProductCard({ product }) {
 
   return (
     <div className="bg-white rounded-lg shadow-sm overflow-hidden transition-all duration-300 hover:translate-y-[-5px] hover:shadow-md p-4 text-center">
-      <Link to={`/product/${product.id}`}>
+      <Link to={`/product-detail/${product.id}`}>
         <img src={product.image} alt={product.name} className="w-full h-64 object-contain rounded-md mb-2" />
         <h3 className="text-lg font-poppins font-semibold text-dark mb-1 whitespace-nowrap overflow-hidden text-ellipsis">{product.name}</h3>
       </Link>

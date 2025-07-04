@@ -15,7 +15,7 @@ function Header() {
         <nav>
           <ul className="flex gap-4 list-none">
             <li><Link to="/" className="text-dark font-medium py-1 relative after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-0 after:h-0.5 after:bg-secondary after:transition-all after:duration-300 hover:after:w-full">Home</Link></li>
-            <li><Link to="/shop" className="text-dark font-medium py-1 relative after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-0 after:h-0.5 after:bg-secondary after:transition-all after:duration-300 hover:after:w-full">Shop</Link></li>
+            <li><Link to="/products" className="text-dark font-medium py-1 relative after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-0 after:h-0.5 after:bg-secondary after:transition-all after:duration-300 hover:after:w-full">Shop</Link></li>
             {/* Account and Login are placeholders as per the plan, linking to static HTML for now */}
             <li><a href="/account.html" className="text-dark font-medium py-1 relative after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-0 after:h-0.5 after:bg-secondary after:transition-all after:duration-300 hover:after:w-full">Account</a></li>
             <li><a href="/login.html" className="text-dark font-medium py-1 relative after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-0 after:h-0.5 after:bg-secondary after:transition-all after:duration-300 hover:after:w-full">Login</a></li>
