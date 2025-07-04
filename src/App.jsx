@@ -1,26 +1,30 @@
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-
-// Note: Header, Footer, and Page components will be implemented in subsequent batches.
-// For now, we define the routing structure.
-// Placeholder components are not created in this batch to adhere to batching rules.
+import Header from './components/Header';
+import Footer from './components/Footer';
+import HomePage from './pages/HomePage';
+import ProductListingPage from './pages/ProductListingPage';
+import ProductDetailPage from './pages/ProductDetailPage';
+import ShoppingCartPage from './pages/ShoppingCartPage';
+import CheckoutPage from './pages/CheckoutPage';
+import WishlistPage from './pages/WishlistPage';
 
 function App() {
   return (
     <Router>
-      {/* Header component will go here in a later batch */}
+      <Header />
       <div className="min-h-screen flex flex-col">
         <main className="flex-grow">
           <Routes>
-            <Route path="/" element={<h1>Home Page (Coming Soon)</h1>} />
-            <Route path="/products" element={<h1>Product Listing Page (Coming Soon)</h1>} />
-            <Route path="/product-detail/:id" element={<h1>Product Detail Page (Coming Soon)</h1>} />
-            <Route path="/cart" element={<h1>Shopping Cart Page (Coming Soon)</h1>} />
-            <Route path="/checkout" element={<h1>Checkout Page (Coming Soon)</h1>} />
-            {/* No dedicated login/account pages as per revised plan (frontend-only) */}
+            <Route path="/" element={<HomePage />} />
+            <Route path="/products" element={<ProductListingPage />} />
+            <Route path="/product-detail/:id" element={<ProductDetailPage />} />
+            <Route path="/cart" element={<ShoppingCartPage />} />
+            <Route path="/checkout" element={<CheckoutPage />} />
+            <Route path="/wishlist" element={<WishlistPage />} />
           </Routes>
         </main>
-        {/* Footer component will go here in a later batch */}
       </div>
+      <Footer />
     </Router>
   );
 }
