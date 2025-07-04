@@ -8,7 +8,7 @@ function Header() {
   const { wishlistItems } = useWishlist(); // Get wishlist items
 
   return (
-    <header className="bg-white shadow-sm py-4 sticky top-0 z-1000">
+    <header className="bg-white shadow-sm py-4 sticky top-0 z-50"> {/* Changed z-1000 to z-50 for standard Tailwind CSS utility */}
       <div className="container mx-auto px-4 flex justify-between items-center flex-wrap">
         <Link to="/" className="font-heading text-2xl font-bold text-primary flex items-center gap-1">
           <img src="https://via.placeholder.com/40x40/FF6B6B/FFFFFF?text=P" alt="Plushie Haven Logo" className="h-8" />

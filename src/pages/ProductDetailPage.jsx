@@ -127,7 +127,7 @@ function ProductDetailPage() {
                 className={`btn btn-outline btn-large flex-grow ${isInWishlist(product.id) ? 'bg-primary text-text-light' : ''}`}
                 aria-label={isInWishlist(product.id) ? 'Remove from Wishlist' : 'Add to Wishlist'}
               >
-                <i className={`fas ${isInWishlist(product.id) ? 'fa-heart' : 'fa-heart-o'} mr-2`}></i>
+                <i className={`${isInWishlist(product.id) ? 'fas' : 'far'} fa-heart mr-2`}></i> {/* Corrected Font Awesome icon class for outline heart */}
                 {isInWishlist(product.id) ? 'Added to Wishlist' : 'Add to Wishlist'}
               </button>
             </div>

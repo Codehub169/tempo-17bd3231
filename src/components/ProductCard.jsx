@@ -43,7 +43,7 @@ function ProductCard({ product }) {
         }`}
         aria-label={isInWishlist(product.id) ? 'Remove from Wishlist' : 'Add to Wishlist'}
       >
-        <i className={`fas ${isInWishlist(product.id) ? 'fa-heart' : 'fa-heart'}`}></i> {/* Using solid heart for both states, color changes */}
+        <i className={`${isInWishlist(product.id) ? 'fas' : 'far'} fa-heart`}></i> {/* Corrected Font Awesome icon class for outline heart */}
       </button>
     </div>
   );
