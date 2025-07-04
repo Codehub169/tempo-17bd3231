@@ -1,0 +1,111 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Custom global styles based on the design system */
+body {
+  @apply font-body text-text-dark leading-relaxed bg-bg-light min-h-screen flex flex-col;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  @apply font-heading text-primary-color mb-4;
+}
+
+h1 { @apply text-5xl; /* Equivalent to 2.8em, adjusted for Tailwind scale */ }
+h2 { @apply text-4xl; /* Equivalent to 2.2em */ }
+h3 { @apply text-3xl; /* Equivalent to 1.8em */ }
+
+a {
+  @apply text-secondary-color no-underline transition-colors duration-300;
+}
+
+a:hover {
+  @apply text-primary-color;
+}
+
+/* General button styles - specific button variants will be handled in components */
+.btn {
+  @apply inline-flex items-center justify-center px-4 py-2 rounded-lg font-heading text-base cursor-pointer border-none transition-all duration-300 text-center no-underline;
+}
+
+.btn-primary {
+  @apply bg-primary-color text-text-light shadow-light;
+}
+
+.btn-primary:hover {
+  @apply bg-primary-dark -translate-y-0.5 shadow-medium;
+}
+
+.btn-secondary {
+  @apply bg-secondary-color text-text-light;
+}
+
+.btn-secondary:hover {
+  @apply bg-secondary-dark;
+}
+
+.btn-outline {
+  @apply bg-transparent text-primary-color border-2 border-primary-color;
+}
+
+.btn-outline:hover {
+  @apply bg-primary-color text-text-light;
+}
+
+.btn-small {
+  @apply px-3 py-1.5 text-sm;
+}
+
+.btn-large {
+  @apply px-7 py-3.5 text-lg;
+}
+
+/* Card styles */
+.card {
+  @apply bg-white rounded-lg shadow-light overflow-hidden transition-all duration-300;
+}
+
+.card:hover {
+  @apply -translate-y-1.5 shadow-medium;
+}
+
+/* Form group styles */
+.form-group {
+  @apply mb-4;
+}
+
+.form-group label {
+  @apply block mb-2 font-bold;
+}
+
+.form-group input:not([type="checkbox"]):not([type="radio"]),
+.form-group textarea,
+.form-group select {
+  @apply w-full px-3 py-2 border border-border-color rounded-lg font-body text-base transition-colors duration-300;
+}
+
+.form-group input:focus,
+.form-group textarea:focus,
+.form-group select:focus {
+  @apply outline-none border-secondary-color ring-2 ring-secondary-color/20;
+}
+
+/* Flex utilities */
+.flex-group {
+  @apply flex gap-4 flex-wrap;
+}
+
+.flex-center {
+  @apply flex justify-center items-center;
+}
+
+/* Specific animation for add to cart feedback */
+@keyframes btn-added-feedback {
+    0% { transform: scale(1); background-color: var(--primary-color); }
+    50% { transform: scale(1.05); background-color: var(--secondary-color); }
+    100% { transform: scale(1); background-color: var(--primary-color); }
+}
+
+.btn-added {
+    animation: btn-added-feedback 0.5s ease-out;
+}
