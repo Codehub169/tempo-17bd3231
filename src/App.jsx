@@ -1,12 +1,12 @@
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import Header from './components/Header';
-import Footer from './components/Footer';
-import HomePage from './pages/HomePage';
-import ProductListingPage from './pages/ProductListingPage';
-import ProductDetailPage from './pages/ProductDetailPage';
-import ShoppingCartPage from './pages/ShoppingCartPage';
-import CheckoutPage from './pages/CheckoutPage';
-import WishlistPage from './pages/WishlistPage';
+import Header from './components/Header.jsx';
+import Footer from './components/Footer.jsx';
+import HomePage from './pages/HomePage.jsx';
+import ProductListingPage from './pages/ProductListingPage.jsx';
+import ProductDetailPage from './pages/ProductDetailPage.jsx';
+import ShoppingCartPage from './pages/ShoppingCartPage.jsx';
+import CheckoutPage from './pages/CheckoutPage.jsx';
+import WishlistPage from './pages/WishlistPage.jsx';
 
 function App() {
   return (
