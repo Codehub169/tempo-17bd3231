@@ -14,11 +14,11 @@ const CartItem = ({ item, onUpdateQuantity, onRemoveItem }) => {
       {/* Product Details */}
       <div className="flex-grow text-center sm:text-left">
         <h4 className="mb-1 text-lg text-text-dark font-heading">
-          <Link to={`/product/${item.id}`} className="hover:text-primary-color">
+          <Link to={`/product/${item.id}`} className="hover:text-primary">
             {item.name}
           </Link>
         </h4>
-        <p className="font-bold text-primary-color">${item.price.toFixed(2)}</p>
+        <p className="font-bold text-primary">${item.price.toFixed(2)}</p>
       </div>
 
       {/* Quantity Selector and Remove Button */}

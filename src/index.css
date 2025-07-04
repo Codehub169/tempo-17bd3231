@@ -2,13 +2,20 @@
 @tailwind components;
 @tailwind utilities;
 
+/* Define CSS variables for colors from Tailwind config */
+:root {
+  --color-primary: #FF6B6B;
+  --color-secondary: #4ECDC4;
+  /* Add other colors if needed for direct CSS usage */
+}
+
 /* Custom global styles based on the design system */
 body {
   @apply font-body text-text-dark leading-relaxed bg-bg-light min-h-screen flex flex-col;
 }
 
 h1, h2, h3, h4, h5, h6 {
-  @apply font-heading text-primary-color mb-4;
+  @apply font-heading text-primary mb-4;
 }
 
 h1 { @apply text-5xl; /* Equivalent to 2.8em, adjusted for Tailwind scale */ }
@@ -16,11 +23,11 @@ h2 { @apply text-4xl; /* Equivalent to 2.2em */ }
 h3 { @apply text-3xl; /* Equivalent to 1.8em */ }
 
 a {
-  @apply text-secondary-color no-underline transition-colors duration-300;
+  @apply text-secondary no-underline transition-colors duration-300;
 }
 
 a:hover {
-  @apply text-primary-color;
+  @apply text-primary;
 }
 
 /* General button styles - specific button variants will be handled in components */
@@ -29,7 +36,7 @@ a:hover {
 }
 
 .btn-primary {
-  @apply bg-primary-color text-text-light shadow-light;
+  @apply bg-primary text-text-light shadow-light;
 }
 
 .btn-primary:hover {
@@ -37,7 +44,7 @@ a:hover {
 }
 
 .btn-secondary {
-  @apply bg-secondary-color text-text-light;
+  @apply bg-secondary text-text-light;
 }
 
 .btn-secondary:hover {
@@ -45,11 +52,11 @@ a:hover {
 }
 
 .btn-outline {
-  @apply bg-transparent text-primary-color border-2 border-primary-color;
+  @apply bg-transparent text-primary border-2 border-primary;
 }
 
 .btn-outline:hover {
-  @apply bg-primary-color text-text-light;
+  @apply bg-primary text-text-light;
 }
 
 .btn-small {
@@ -87,7 +94,7 @@ a:hover {
 .form-group input:focus,
 .form-group textarea:focus,
 .form-group select:focus {
-  @apply outline-none border-secondary-color ring-2 ring-secondary-color/20;
+  @apply outline-none border-secondary ring-2 ring-secondary/20;
 }
 
 /* Flex utilities */
@@ -101,9 +108,9 @@ a:hover {
 
 /* Specific animation for add to cart feedback */
 @keyframes btn-added-feedback {
-    0% { transform: scale(1); background-color: var(--primary-color); }
-    50% { transform: scale(1.05); background-color: var(--secondary-color); }
-    100% { transform: scale(1); background-color: var(--primary-color); }
+    0% { transform: scale(1); background-color: var(--color-primary); }
+    50% { transform: scale(1.05); background-color: var(--color-secondary); }
+    100% { transform: scale(1); background-color: var(--color-primary); }
 }
 
 .btn-added {

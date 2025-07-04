@@ -95,41 +95,44 @@ const CheckoutPage = () => {
   const finalTotal = cartTotal + shippingCost;
 
   const renderFormSection = () => {
+    // Corrected focus classes based on src/index.css
+    const inputFocusClasses = "focus:outline-none focus:border-secondary focus:ring-2 focus:ring-secondary/20";
+
     switch (currentStep) {
       case 1:
         return (
           <div id="step-1" className="checkout-form-section active">
-            <h3 className="text-primary-color font-heading text-xl mb-4">Shipping Address</h3>
+            <h3 className="text-primary font-heading text-xl mb-4">Shipping Address</h3>
             <div className="form-group">
               <label htmlFor="fullName" className="block text-dark mb-2 font-bold">Full Name</label>
-              <input type="text" id="fullName" name="fullName" value={shippingInfo.fullName} onChange={handleShippingChange} className="w-full p-2 border border-border-color rounded-md font-body text-base transition-colors duration-300 focus:outline-none focus:border-secondary-color focus:shadow-outline-secondary" required />
+              <input type="text" id="fullName" name="fullName" value={shippingInfo.fullName} onChange={handleShippingChange} className={`w-full p-2 border border-border-color rounded-md font-body text-base transition-colors duration-300 ${inputFocusClasses}`} required />
             </div>
             <div className="form-group">
               <label htmlFor="address1" className="block text-dark mb-2 font-bold">Address Line 1</label>
-              <input type="text" id="address1" name="address1" value={shippingInfo.address1} onChange={handleShippingChange} className="w-full p-2 border border-border-color rounded-md font-body text-base transition-colors duration-300 focus:outline-none focus:border-secondary-color focus:shadow-outline-secondary" required />
+              <input type="text" id="address1" name="address1" value={shippingInfo.address1} onChange={handleShippingChange} className={`w-full p-2 border border-border-color rounded-md font-body text-base transition-colors duration-300 ${inputFocusClasses}`} required />
             </div>
             <div className="form-group">
               <label htmlFor="address2" className="block text-dark mb-2 font-bold">Address Line 2 (Optional)</label>
-              <input type="text" id="address2" name="address2" value={shippingInfo.address2} onChange={handleShippingChange} className="w-full p-2 border border-border-color rounded-md font-body text-base transition-colors duration-300 focus:outline-none focus:border-secondary-color focus:shadow-outline-secondary" />
+              <input type="text" id="address2" name="address2" value={shippingInfo.address2} onChange={handleShippingChange} className={`w-full p-2 border border-border-color rounded-md font-body text-base transition-colors duration-300 ${inputFocusClasses}`} />
             </div>
             <div className="flex flex-wrap gap-4">
               <div className="form-group flex-1">
                 <label htmlFor="city" className="block text-dark mb-2 font-bold">City</label>
-                <input type="text" id="city" name="city" value={shippingInfo.city} onChange={handleShippingChange} className="w-full p-2 border border-border-color rounded-md font-body text-base transition-colors duration-300 focus:outline-none focus:border-secondary-color focus:shadow-outline-secondary" required />
+                <input type="text" id="city" name="city" value={shippingInfo.city} onChange={handleShippingChange} className={`w-full p-2 border border-border-color rounded-md font-body text-base transition-colors duration-300 ${inputFocusClasses}`} required />
               </div>
               <div className="form-group flex-1">
                 <label htmlFor="state" className="block text-dark mb-2 font-bold">State</label>
-                <input type="text" id="state" name="state" value={shippingInfo.state} onChange={handleShippingChange} className="w-full p-2 border border-border-color rounded-md font-body text-base transition-colors duration-300 focus:outline-none focus:border-secondary-color focus:shadow-outline-secondary" required />
+                <input type="text" id="state" name="state" value={shippingInfo.state} onChange={handleShippingChange} className={`w-full p-2 border border-border-color rounded-md font-body text-base transition-colors duration-300 ${inputFocusClasses}`} required />
               </div>
             </div>
             <div className="flex flex-wrap gap-4">
               <div className="form-group flex-1">
                 <label htmlFor="zipCode" className="block text-dark mb-2 font-bold">Zip Code</label>
-                <input type="text" id="zipCode" name="zipCode" value={shippingInfo.zipCode} onChange={handleShippingChange} pattern="[0-9]{5}(-[0-9]{4})?" className="w-full p-2 border border-border-color rounded-md font-body text-base transition-colors duration-300 focus:outline-none focus:border-secondary-color focus:shadow-outline-secondary" required />
+                <input type="text" id="zipCode" name="zipCode" value={shippingInfo.zipCode} onChange={handleShippingChange} pattern="[0-9]{5}(-[0-9]{4})?" className={`w-full p-2 border border-border-color rounded-md font-body text-base transition-colors duration-300 ${inputFocusClasses}`} required />
               </div>
               <div className="form-group flex-1">
                 <label htmlFor="country" className="block text-dark mb-2 font-bold">Country</label>
-                <select id="country" name="country" value={shippingInfo.country} onChange={handleShippingChange} className="w-full p-2 border border-border-color rounded-md font-body text-base transition-colors duration-300 focus:outline-none focus:border-secondary-color focus:shadow-outline-secondary" required>
+                <select id="country" name="country" value={shippingInfo.country} onChange={handleShippingChange} className={`w-full p-2 border border-border-color rounded-md font-body text-base transition-colors duration-300 ${inputFocusClasses}`} required>
                   <option value="">Select Country</option>
                   <option value="USA">United States</option>
                   <option value="CAN">Canada</option>
@@ -139,7 +142,7 @@ const CheckoutPage = () => {
             </div>
             <div className="form-group">
               <label htmlFor="phone" className="block text-dark mb-2 font-bold">Phone Number</label>
-              <input type="tel" id="phone" name="phone" value={shippingInfo.phone} onChange={handleShippingChange} pattern="[0-9]{10,15}" className="w-full p-2 border border-border-color rounded-md font-body text-base transition-colors duration-300 focus:outline-none focus:border-secondary-color focus:shadow-outline-secondary" required />
+              <input type="tel" id="phone" name="phone" value={shippingInfo.phone} onChange={handleShippingChange} pattern="[0-9]{10,15}" className={`w-full p-2 border border-border-color rounded-md font-body text-base transition-colors duration-300 ${inputFocusClasses}`} required />
             </div>
             <div className="flex justify-end mt-6">
               <button type="button" onClick={handleNextStep} className={`btn btn-secondary ${totalItems === 0 ? 'opacity-50 cursor-not-allowed' : ''}`} disabled={totalItems === 0}>Next: Payment</button>
@@ -149,27 +152,27 @@ const CheckoutPage = () => {
       case 2:
         return (
           <div id="step-2" className="checkout-form-section active">
-            <h3 className="text-primary-color font-heading text-xl mb-4">Payment Information</h3>
+            <h3 className="text-primary font-heading text-xl mb-4">Payment Information</h3>
             <div className="form-group">
               <label htmlFor="cardName" className="block text-dark mb-2 font-bold">Name on Card</label>
-              <input type="text" id="cardName" name="cardName" value={paymentInfo.cardName} onChange={handlePaymentChange} className="w-full p-2 border border-border-color rounded-md font-body text-base transition-colors duration-300 focus:outline-none focus:border-secondary-color focus:shadow-outline-secondary" required />
+              <input type="text" id="cardName" name="cardName" value={paymentInfo.cardName} onChange={handlePaymentChange} className={`w-full p-2 border border-border-color rounded-md font-body text-base transition-colors duration-300 ${inputFocusClasses}`} required />
             </div>
             <div className="form-group">
               <label htmlFor="cardNumber" className="block text-dark mb-2 font-bold">Card Number</label>
-              <input type="text" id="cardNumber" name="cardNumber" value={paymentInfo.cardNumber} onChange={handlePaymentChange} pattern="[0-9]{13,19}" className="w-full p-2 border border-border-color rounded-md font-body text-base transition-colors duration-300 focus:outline-none focus:border-secondary-color focus:shadow-outline-secondary" required />
+              <input type="text" id="cardNumber" name="cardNumber" value={paymentInfo.cardNumber} onChange={handlePaymentChange} pattern="[0-9]{13,19}" className={`w-full p-2 border border-border-color rounded-md font-body text-base transition-colors duration-300 ${inputFocusClasses}`} required />
             </div>
             <div className="flex flex-wrap gap-4">
               <div className="form-group flex-1">
                 <label htmlFor="expMonth" className="block text-dark mb-2 font-bold">Expiration Month</label>
-                <input type="text" id="expMonth" name="expMonth" placeholder="MM" value={paymentInfo.expMonth} onChange={handlePaymentChange} pattern="(0[1-9]|1[0-2])" className="w-full p-2 border border-border-color rounded-md font-body text-base transition-colors duration-300 focus:outline-none focus:border-secondary-color focus:shadow-outline-secondary" required />
+                <input type="text" id="expMonth" name="expMonth" placeholder="MM" value={paymentInfo.expMonth} onChange={handlePaymentChange} pattern="(0[1-9]|1[0-2])" className={`w-full p-2 border border-border-color rounded-md font-body text-base transition-colors duration-300 ${inputFocusClasses}`} required />
               </div>
               <div className="form-group flex-1">
                 <label htmlFor="expYear" className="block text-dark mb-2 font-bold">Expiration Year</label>
-                <input type="text" id="expYear" name="expYear" placeholder="YY" value={paymentInfo.expYear} onChange={handlePaymentChange} pattern="[0-9]{2}" className="w-full p-2 border border-border-color rounded-md font-body text-base transition-colors duration-300 focus:outline-none focus:border-secondary-color focus:shadow-outline-secondary" required />
+                <input type="text" id="expYear" name="expYear" placeholder="YY" value={paymentInfo.expYear} onChange={handlePaymentChange} pattern="[0-9]{2}" className={`w-full p-2 border border-border-color rounded-md font-body text-base transition-colors duration-300 ${inputFocusClasses}`} required />
               </div>
               <div className="form-group flex-1">
                 <label htmlFor="cvv" className="block text-dark mb-2 font-bold">CVV</label>
-                <input type="text" id="cvv" name="cvv" value={paymentInfo.cvv} onChange={handlePaymentChange} pattern="[0-9]{3,4}" className="w-full p-2 border border-border-color rounded-md font-body text-base transition-colors duration-300 focus:outline-none focus:border-secondary-color focus:shadow-outline-secondary" required />
+                <input type="text" id="cvv" name="cvv" value={paymentInfo.cvv} onChange={handlePaymentChange} pattern="[0-9]{3,4}" className={`w-full p-2 border border-border-color rounded-md font-body text-base transition-colors duration-300 ${inputFocusClasses}`} required />
               </div>
             </div>
             <div className="flex justify-between mt-6">
@@ -181,13 +184,13 @@ const CheckoutPage = () => {
       case 3:
         return (
           <div id="step-3" className="checkout-form-section active">
-            <h3 className="text-primary-color font-heading text-xl mb-4">Order Confirmation</h3>
+            <h3 className="text-primary font-heading text-xl mb-4">Order Confirmation</h3>
             <div className="text-center p-8 bg-white rounded-lg shadow-medium">
-              <div className="text-secondary-color text-5xl mb-4"><i className="fas fa-check-circle"></i></div>
-              <h2 className="text-secondary-color text-2xl mb-4">Your Order is Confirmed!</h2>
+              <div className="text-secondary text-5xl mb-4"><i className="fas fa-check-circle"></i></div>
+              <h2 className="text-secondary text-2xl mb-4">Your Order is Confirmed!</h2>
               <p className="text-gray-600 mb-4">Thank you for your purchase from Plushie Haven. Your order has been successfully placed and will be processed shortly.</p>
               <p className="text-gray-600">A confirmation email has been sent to your provided email address.</p>
-              <p className="mt-4 text-lg font-bold">Order ID: <strong className="text-primary-color">PHN-2023-XYZ123</strong></p>
+              <p className="mt-4 text-lg font-bold">Order ID: <strong className="text-primary">PHN-2023-XYZ123</strong></p>
               <div className="flex justify-center gap-4 mt-6">
                 <Link to="/account" className="btn btn-secondary">View My Orders</Link>
                 <Link to="/" className="btn btn-outline">Continue Shopping</Link>
@@ -205,12 +208,12 @@ const CheckoutPage = () => {
       <Header />
       <main className="container mx-auto flex flex-wrap gap-6 py-12 px-4 flex-grow">
         <section className="flex-2 min-w-[300px]">
-          <h2 className="font-heading text-primary-color text-3xl mb-6">Checkout</h2>
+          <h2 className="font-heading text-primary text-3xl mb-6">Checkout</h2>
           <div className="flex justify-around mb-6 border-b-2 border-border-color pb-2">
             <div
               className={`checkout-step py-2 px-4 rounded-md font-bold text-gray-500 cursor-pointer flex-1 mx-1 text-center transition-all duration-300
-                ${currentStep === 1 ? 'bg-secondary-color text-text-light shadow-light' : ''}
-                ${currentStep > 1 ? 'bg-primary-color text-text-light' : ''}
+                ${currentStep === 1 ? 'bg-secondary text-text-light shadow-light' : ''}
+                ${currentStep > 1 ? 'bg-primary text-text-light' : ''}
               `}
               onClick={() => setCurrentStep(1)}
             >
@@ -218,8 +221,8 @@ const CheckoutPage = () => {
             </div>
             <div
               className={`checkout-step py-2 px-4 rounded-md font-bold text-gray-500 cursor-pointer flex-1 mx-1 text-center transition-all duration-300
-                ${currentStep === 2 ? 'bg-secondary-color text-text-light shadow-light' : ''}
-                ${currentStep > 2 ? 'bg-primary-color text-text-light' : ''}
+                ${currentStep === 2 ? 'bg-secondary text-text-light shadow-light' : ''}
+                ${currentStep > 2 ? 'bg-primary text-text-light' : ''}
               `}
               onClick={() => currentStep >= 2 && setCurrentStep(2)}
             >
@@ -227,7 +230,7 @@ const CheckoutPage = () => {
             </div>
             <div
               className={`checkout-step py-2 px-4 rounded-md font-bold text-gray-500 cursor-pointer flex-1 mx-1 text-center transition-all duration-300
-                ${currentStep === 3 ? 'bg-secondary-color text-text-light shadow-light' : ''}
+                ${currentStep === 3 ? 'bg-secondary text-text-light shadow-light' : ''}
               `}
               onClick={() => currentStep >= 3 && setCurrentStep(3)}
             >
@@ -239,7 +242,7 @@ const CheckoutPage = () => {
         </section>
 
         <section className="flex-1 min-w-[280px] bg-white rounded-lg shadow-light p-6 h-fit">
-          <h3 className="font-heading text-secondary-color text-xl mb-4">Your Order</h3>
+          <h3 className="font-heading text-secondary text-xl mb-4">Your Order</h3>
           <div id="checkout-order-items">
             {cartItems.length === 0 && currentStep !== 3 ? (
               <p className="text-center p-5 text-gray-600">Your cart is empty.</p>
@@ -260,7 +263,7 @@ const CheckoutPage = () => {
             <span className="text-dark">Shipping:</span>
             <span id="summary-shipping" className="text-dark font-semibold">{formatCurrency(shippingCost)}</span>
           </div>
-          <div className="flex justify-between text-2xl font-bold text-primary-color border-t border-border-color pt-2 mt-2">
+          <div className="flex justify-between text-2xl font-bold text-primary border-t border-border-color pt-2 mt-2">
             <span>Total:</span>
             <span id="summary-total">{formatCurrency(finalTotal)}</span>
           </div>
